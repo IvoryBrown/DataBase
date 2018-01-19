@@ -1,4 +1,4 @@
-- MySQL Workbench Forward Engineering
+-- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
@@ -105,6 +105,41 @@ CREATE TABLE IF NOT EXISTS `szerviz_up`.`softver` (
     REFERENCES `szerviz_up`.`gepadatok` (`id_gepadatok`)
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+
+
+-- -----------------------------------------------------
+-- Table `szerviz_up`.`raktar`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `szerviz_up`.`raktar` (
+  `category_id` INT NOT NULL,
+  `eszkoznev` VARCHAR(255) NULL,
+  `kelte` DATE NULL,
+  `eladas_kelte` DATE NULL,
+  `mennyiseg` INT NULL,
+  `leiras` VARCHAR(255) NULL,
+  PRIMARY KEY (`category_id`));
+
+
+-- -----------------------------------------------------
+-- Table `szerviz_up`.`ugyfel_adatok_copy1`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `szerviz_up`.`ugyfel_adatok_copy1` (
+  `id_ugyfel` INT NOT NULL AUTO_INCREMENT,
+  `ugyfel_azonosito` VARCHAR(155) NULL,
+  `cegnev` VARCHAR(255) NULL,
+  `ugyfel_nev` VARCHAR(100) NULL,
+  `megye` VARCHAR(100) NULL,
+  `telepules` VARCHAR(100) NULL,
+  `iranyitoszam` INT NULL,
+  `cim` VARCHAR(255) NULL,
+  `ceg_telefon` VARCHAR(100) NULL,
+  `ceg_email` VARCHAR(100) NULL,
+  `ugyfel_email` VARCHAR(100) NULL,
+  `ugyfel_telefon` VARCHAR(100) NULL,
+  `csomag_tipus` VARCHAR(100) NULL,
+  `ugyintezo` VARCHAR(100) NULL,
+  `ugyfel_megjegyzes` VARCHAR(255) NULL,
+  PRIMARY KEY (`id_ugyfel`));
 
 
 SET SQL_MODE=@OLD_SQL_MODE;
